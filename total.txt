@@ -1,4 +1,4 @@
-1 左右等高布局
+﻿1 左右等高布局
 
 	等高主要是padding-bottom:100000px;margin-bottom:100000px;实现的
 
@@ -12,3 +12,6 @@
 	题三：三栏布局内容撑开高度但三栏以最高的一栏对齐；
 
 	思路与题二相同。设定margin-bottom:-10000px;padding-bottom:10000px;
+
+2:布局排版
+http://www.360doc.com/content/15/1201/22/16000345_517268963.shtml
