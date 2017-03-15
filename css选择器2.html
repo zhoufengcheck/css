@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<style>
+		.demo{width: 250px;height: 150px;border: 1px solid red;position: relative;padding-left: 10px;margin-top: 10px;float: left;margin-right: 100px}
+		.demo h1{font-size: 16px}
+		.demo input{width: 200px;height: 30px;border:1px solid #ccc;}
+		.demo input[type="checkbox"]{width: 15px;height: 15px;border:1px solid #ccc;}
+		/*CSS 2.1中的伪元素*/
+		.demo::before{content: "";display: block;width: 0;height: 0;border-bottom: 20px solid transparent;border-left: 40px solid red;position: absolute;top: 50%;right: 0;border-top:20px solid transparent;transform:translate(100%,-50%); }
+		.demo1 p:first-line{font-size: 20px}
+		.demo1 p:first-letter{font-size: 30px;color: red}
+		/*CSS 2.1中的伪类*/
+		.demo2 input[type='text']:focus:hover { background:#ccc;}
+		.demo2>h1:first-child{font-size: 20px}
+		.demo2>a:link{color: lightpink;text-decoration: none}/*没有访问的*/
+		.demo2>a:visited{color: red}/*访问过的*/
+		.demo2>a:active{color: blue}
+		/*CSS 3 属性选择器*/
+		.demo3>span[data-type^="y"]{display:block;width: 60px;height: 30px;background-color: lightblue}
+		.demo3>span[data-type$="s"]{line-height: 30px;border-radius: 5px;text-align: center;cursor: pointer;}
+		.demo3>span[data-type*="e"]{color: white;font-size: 18px;font-weight: bold;box-shadow: 0px 0px 4px 5px #fff inset }
+		/*CSS 3 中与用户界面有关的伪类*/
+		.demo4 input[type="text"]:disabled { background:#ddd; }
+		.demo4 input[type="text"]:enabled { border-color: pink }
+		.demo4 label{width: 20px;height: 20px;position: relative;}
+		.demo4 label input[type="checkbox"],.demo4 label span{width: 15px;height: 15px;position: absolute;top: 0;left: 0;display: block;margin: 0;opacity: 0;color: blue;z-index: 10}
+		.demo4 label >.border{border: 1px solid #555;border-radius: 2px;opacity: 1;z-index: -1}
+		.demo4 label input[type="checkbox"]:checked~span{opacity: 1 !important;border-color: blue}
+		/*CSS 3中的结构性伪类*/
+		.demo5{height: 300px}
+		.demo5>p:nth-child(2){color: red}
+		.demo5>p:nth-child(odd){color: green}
+		.demo5>p:nth-child(even){color: pink}
+	</style>
+</head>
+<body>
+	<div class="demo demo1">
+		<h1>CSS 2.1中的伪元素</h1>
+		<p> 
+			愿梦里有喝不完的酒</br>
+			醒来后能酩酊大醉的过完这一生</br>
+			你要照顾好你黑色的头发</br>
+			挑剔的胃和爱笑的眼睛
+		</p>
+	</div>
+	<div class="demo demo2" >
+		<h1>CSS 2.1中的伪类</h1>
+		<input type="text"></br>
+		<a href="https://www.baidu.com/" target="_blank">Link</a>
+	</div>
+	<div class="demo demo3" >
+		<h1>CSS 3 属性选择器</h1>
+		<span data-type="yes">sure</span>
+	</div>
+	<div class="demo demo4" >
+		<h1>CSS 3 中与用户界面有关的伪类</h1>
+		<input type="text"  placeholder="disabled" disabled></br></br>
+		<input type="text"></br>
+
+		<label>
+			<input type="checkbox">
+			<span class="border"></span>
+			<span class="ace glyphicon glyphicon-ok"></span>
+		</label>
+	</div>
+	<div class="demo demo5" >
+		<h1>CSS 3 结构性伪类</h1>
+		<p>世间安得两全法，不负如来不负卿</p>
+		<p>所以念君者，为百年，不为一夕</p>
+		<p>随便记住我，然后忘了吧</p>
+		<p>我这个人走的很慢，但从不后退</p>
+		<p>只希望能手牵手在太阳下散步</p>
+	</div>
+</body>
+</html>
