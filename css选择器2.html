@@ -5,6 +5,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<style>
+	body{width:100%;height: 100;}
 		.demo{width: 250px;height: 150px;border: 1px solid red;position: relative;padding-left: 10px;margin-top: 10px;float: left;margin-right: 100px}
 		.demo h1{font-size: 16px}
 		.demo input{width: 200px;height: 30px;border:1px solid #ccc;}
@@ -35,6 +36,15 @@
 		.demo5>p:nth-child(2){color: red}
 		.demo5>p:nth-child(odd){color: green}
 		.demo5>p:nth-child(even){color: pink}
+
+
+
+		#myDiv { 
+
+		width: expression(document.body.offsetWidth + "px"); 
+		height: expression(document.body.offsetWidth+ "px"); 
+		background: red; 
+		}
 	</style>
 </head>
 <body>
@@ -75,5 +85,6 @@
 		<p>我这个人走的很慢，但从不后退</p>
 		<p>只希望能手牵手在太阳下散步</p>
 	</div>
+	<div id="myDiv">sdfsdf</div>
 </body>
 </html>
