@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			h1{font-size: 16px;}
+			div{width: 100px;height: 30px;}
+			div.parent{width: 300px;height: 200px;border: 1px solid #ccc;padding:10px;float: left;margin-left: 10px;margin-top: 60px;}
+			#special{border-color: lightcoral;}
+			.parent>.child{width: 100px;height: 100px;border: 1px solid red;}
+			/*div+p	选择所有紧接着<div>元素之后的<p>元素*/
+			.parent+div{border-width: 10px;}
+/************css2.1属性选择器  4个********************************************************************/
+			/*选择所有带有target属性的 <a>元素：*/
+			a[target]{background: lightgreen;}
+			a[target=_blank]{background: lightseagreen;}
+			a[href~=www]{font-size: 30px;}
+			/*匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、
+			 * 其中一个值以"val"开头的E元素，主要用于lang属性，
+			 * 比如"en"、"en-us"、"en-gb"等等*/
+			a[href|=www]{font-size: 20px;}
+			/*input placeholder*/
+			::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			    color:    red;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			   color:    red;
+			   opacity:  1;
+			}
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+			   color:    red;
+			   opacity:  1;
+			}
+			:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			   color:    red;
+			}
+			
+/***************************CSS 2.1中的伪类*************************************************************/
+			
+			.parent:nth-child(3)>a{font-size: 20px;}
+			.parent:nth-child(3)>a:first-child{color: red;}
+			/*E ~ F	匹配任何在E元素之后的同级F元素   所以E+F  与E~F还是有很大区别，看例子*/
+			#special>span:first-child~p{font-size: 20px;color:#00CCCC;}
+		</style>
+	</head>
+	<body>
+		<div class="parent" id="special">
+			parent
+			<div class="child">
+				child
+				<span>grandchild in span</span>
+			</div>
+		</div>
+		<div class="parent">
+			<h1>属性选择器</h1>
+			<a href="www  baidu.com" target="_blank">去百度</a>
+			<a href="www-baidu.com" target="_top">去重庆哈哈</a>
+			<input type="" name="" id="" value=""  placeholder="123"/>
+		</div>
+		<div class="parent" >
+			<a href="123">a标签伪类1</a></br>
+			<a href="123">a标签伪类2</a></br>
+			<a href="123">a标签伪类3</a></br>
+		</div>
+		<div class="parent"></div>
+				<span></span>
+		<div class="parent" id="special">
+			<span>span1</span>
+			<span>span2</span>
+			<p>p1</p>
+			<span>span3</span>
+			<p>p2</p>
+		</div>
+	</body>
+</html>
