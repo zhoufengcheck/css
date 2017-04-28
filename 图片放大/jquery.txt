@@ -1,0 +1,11 @@
+var X = $('#DivID').offset().top;
+
+var Y = $('#DivID').offset().left;
+
+ 
+
+获取相对(父元素)位置:
+
+var X = $('#DivID').position().top;
+
+var Y = $('#DivID').position().left;

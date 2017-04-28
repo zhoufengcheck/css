@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bg{width: 300px;height: 200px;float: left;}
+		/*.icon{width: 40px;height: 40px;background-color: #444;top: 0;left: 0;display: none;position: absolute;cursor: pointer;opacity: 0.4;}*/
+		.bg>img{width: 100%;height: 100%;cursor: pointer;}
+		.big{
+			display: none;
+			width: 300px;
+			height: 200px;
+			border: 1px solid red;
+			float: left;
+			background-image: url(1.jpg);
+			background-size: 200%;
+			background-repeat: no-repeat;
+			background-position:-10px -10px;
+			margin-left: 20px
+		}
+
+	</style>
+	<script src="jquery-3.0.0.js"></script>
+	<script>
+		$(function(){
+			//相对于屏幕的位置
+			var X = $('#img').offset().top;
+			var Y = $('#img').offset().left;
+
+			$('#img').mouseenter(function(e){
+				$('#img').mousemove(function(e){
+					//鼠标的位置
+					$("#big").css({'display':'block'})
+					var mouseX = e.originalEvent.x || e.originalEvent.layerX || 0; 
+					var mouseY = e.originalEvent.y || e.originalEvent.layerY || 0; 
+					var left=-(mouseX-X)+'px';
+					var top=-(mouseY-Y)+'px';				
+					$('#big').css({
+						'display':'block',
+						'background-position':''+left+' '+top
+					});
+				})
+			})
+			
+			$('#img').mouseleave(function(e){
+				$('#img').mouseout(function(e){
+					$("#big").css({'display':'none'})
+				})				
+			})
+		})
+	</script>
+</head>
+<body>
+	<span id="icon" class="icon"></span>
+	<div class="bg" id="img">
+		<img src="1.jpg" alt="">
+	</div>
+	<div class="big" id="big"></div>
+</body>
+</html>
